@@ -798,24 +798,14 @@ const IACApp = {
                 submitBtn.innerHTML = originalBtnText;
             }
 
-            const message = `*NEW IAC MEMBERSHIP APPLICATION*%0A` +
-                `*Name:* ${encodeURIComponent(fullName)}%0A` +
-                `*Roll No:* ${encodeURIComponent(rollNo)}%0A` +
-                `*Dept:* ${encodeURIComponent(dept)} (${encodeURIComponent(year)})%0A` +
-                `*Email:* ${encodeURIComponent(email)}%0A` +
-                `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                `*Interest:* ${encodeURIComponent(interest)}%0A%0A` +
-                `Hello IAC Team! I would like to join the Innovation & Automation Club.`;
-
-            const whatsappUrl = `https://wa.me/919876543210?text=${message}`;
-
             if (isSavedInMongo) {
-                alert(`✅ SUCCESS!\nApplication for ${fullName} (${rollNo}) has been saved into MongoDB Atlas Database!\n\nClick OK to open WhatsApp notification.`);
+                this.showToast(`✅ Membership Application for ${fullName} saved to MongoDB Database!`);
+                alert(`🎉 APPLICATION SUBMITTED SUCCESSFULLY!\n\nDear ${fullName},\nYour membership registration has been recorded in the IAC MongoDB Database.\n\nThe Core Team will review your application soon.`);
             } else {
-                alert(`⚠️ Application Registered!\nProceeding to send details to IAC Core Team on WhatsApp.`);
+                this.showToast(`⚠️ Application submitted! Network offline.`);
+                alert(`⚠️ Application Received!\nYour details have been submitted.`);
             }
 
-            window.open(whatsappUrl, '_blank');
             form.reset();
         });
     },
