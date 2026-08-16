@@ -141,8 +141,8 @@ app.delete('/api/applications/:id', verifyApiKey, async (req, res) => {
     }
 });
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`🚀 IAC Express Backend API Server running on port ${PORT}`);
+// Start Server - Bind to 0.0.0.0 so all network devices (mobiles/laptops) can connect
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 IAC Express Backend API Server running on port ${PORT} (Listening on 0.0.0.0)`);
     console.log(`📡 Local API Endpoint: http://localhost:${PORT}/api/health`);
 });
