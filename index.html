@@ -17,11 +17,13 @@
 <body class="antialiased selection:bg-indigo-500 selection:text-white">
 
     <!-- =========================================================================
-         STICKY NAVIGATION HEADER & CONTINUOUS SEAMLESS MARQUEE TICKER
+         HEADER CONTAINER (NAVIGATION, LOGOS & PHELA MARQUEE)
          ========================================================================= -->
     <header class="sticky top-0 z-50 cyber-nav">
         
-        <!-- CONTINUOUS RIGHT-TO-LEFT MARQUEE BANNER -->
+        <!-- =========================================================================
+             📢 SECTION 1: PHELA MARQUEE / FIRST TICKER (TOP NOTICE ANNOUNCEMENT - RIGHT TO LEFT)
+             ========================================================================= -->
         <div class="bg-indigo-950/90 border-b border-indigo-500/30 py-2 px-3 text-[11px] sm:text-xs font-semibold text-indigo-200 overflow-hidden">
             <marquee behavior="scroll" direction="left" scrollamount="7" onmouseover="this.stop();" onmouseout="this.start();" class="flex items-center">
                 <span class="inline-flex items-center gap-1.5 text-cyan-400 font-extrabold mx-3"><span class="pulse-live"></span> B.TECH EIE LIVE HUB:</span>
@@ -36,7 +38,9 @@
             </marquee>
         </div>
 
-        <!-- Main Navigation Bar -->
+        <!-- =========================================================================
+             🏢 SECTION 2: MAIN HEADER NAVIGATION (LOGOS, TITLE, SEARCH, THEME, MOBILE MENU & ADMIN DB)
+             ========================================================================= -->
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex justify-between items-center">
             
             <!-- Branding / Logo (Optimized for Mobile Screens) -->
@@ -97,7 +101,9 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation Drawer Menu (Ultra Clean & Well Spaced) -->
+        <!-- =========================================================================
+             📱 SECTION 3: MOBILE NAVIGATION DRAWER MENU (SLIDE-DOWN MENU FOR MOBILE SCREENS)
+             ========================================================================= -->
         <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-700/40 bg-slate-900/98 px-4 py-5 space-y-3 text-xs font-semibold shadow-2xl">
             
             <!-- Mobile Action CTAs -->
@@ -125,11 +131,13 @@
 
 
     <!-- =========================================================================
-         VIEW 1: HOME PAGE (ENGINEERING HUD & B.TECH SHOWCASE)
+         🏠 VIEW 1: HOME PAGE (HERO BANNER, TECH TICKER, HARDWARE SIMULATOR & LABS)
          ========================================================================= -->
     <div id="view-home" class="view-page">
         
-        <!-- HERO SECTION -->
+        <!-- =========================================================================
+             🏠 SECTION 4: HERO SECTION (MAIN BANNER WITH BADGE & MOTTO: INNOVATE - AUTOMATE - INSPIRE)
+             ========================================================================= -->
         <section class="relative pt-12 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="max-w-6xl mx-auto text-center relative z-10">
                 
@@ -188,7 +196,9 @@
             </div>
         </section>
 
-        <!-- CONTINUOUS TECH STACK MOVING MARQUEE TICKER (EXECUTIVE DARK NAVY - LEFT TO RIGHT DIRECTION) -->
+        <!-- =========================================================================
+             ⚙️ SECTION 5: DOOSRA MARQUEE / SECOND TICKER (TECH STACK TICKER - LEFT TO RIGHT)
+             ========================================================================= -->
         <section class="py-3.5 border-y border-indigo-500/30 overflow-hidden bg-indigo-950/90 text-indigo-200">
             <marquee behavior="scroll" direction="right" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" class="text-xs font-bold">
                 <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-microchip"></i> Arduino Microcontrollers</span>
@@ -202,7 +212,9 @@
             </marquee>
         </section>
 
-        <!-- HOD WELCOME CARD & LIVE EVENT COUNTDOWN TICKER -->
+        <!-- =========================================================================
+             👩‍🏫 SECTION 6: HOD WELCOME CARD (DR. NEHA JAIN) & LIVE WORKSHOP COUNTDOWN TIMER
+             ========================================================================= -->
         <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                 
@@ -254,19 +266,21 @@
             </div>
         </section>
 
-        <!-- LIVE INTERACTIVE HARDWARE SIMULATOR WIDGET -->
+        <!-- =========================================================================
+             🎛️ SECTION 7: INTERACTIVE B.TECH HARDWARE SIMULATOR (ESP32 LED, PLC RELAY & SENSOR CONTROL)
+             ========================================================================= -->
         <section class="py-12 sm:py-16 border-t border-slate-700/40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Interactive B.Tech Workbench</span>
-                <h2 class="text-2xl sm:text-3xl font-black">Live Embedded Hardware Simulator</h2>
-                <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mt-2">
-                    Click the control buttons below to simulate switching ON/OFF an ESP32 Pin 13 LED, PLC Relay Coil, and reading an ADC sensor live on screen!
+                <h2 class="text-2xl sm:text-4xl font-black">Live Embedded Hardware Simulator</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mt-2">
+                    Click the control switches below to test simulated GPIO pins, relay switches, and sensor signals in real-time.
                 </p>
             </div>
 
-            <div class="cyber-card max-w-4xl mx-auto rounded-3xl p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                <!-- Controls Side -->
-                <div class="space-y-3.5">
+            <div class="cyber-card rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <!-- Control Panel Side -->
+                <div class="space-y-4">
                     <h4 class="font-bold text-xs sm:text-sm text-white mb-2 flex items-center gap-2">
                         <i class="fas fa-sliders-h text-indigo-500"></i> Hardware Control Switches
                     </h4>
@@ -320,7 +334,9 @@
             </div>
         </section>
 
-        <!-- B.TECH ENGINEERING LABS SHOWCASE -->
+        <!-- =========================================================================
+             🔬 SECTION 8: SPECIALIZED ENGINEERING LABORATORIES & DOWNLOADABLE LAB MANUALS
+             ========================================================================= -->
         <section id="curriculum" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">B.Tech EIE Curriculum Integration</span>
@@ -380,9 +396,13 @@
 
 
     <!-- =========================================================================
-         VIEW 2: STAFF MEMBERS & FACULTY HUB
+         👨‍🏫 VIEW 2: STAFF MEMBERS & FACULTY HUB
          ========================================================================= -->
     <div id="view-faculty" class="view-page hidden">
+        
+        <!-- =========================================================================
+             👨‍🏫 SECTION 9: STAFF & FACULTY MENTORS HUB (EIE FACULTY PROFILES & SEARCH)
+             ========================================================================= -->
         <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center mb-10 sm:mb-12">
@@ -420,9 +440,13 @@
 
 
     <!-- =========================================================================
-         VIEW 3: IAC CORE TEAM & DOMAINS (OUR LEADERSHIP & EXECUTION)
+         👥 VIEW 3: IAC CORE TEAM & DOMAINS (OUR LEADERSHIP & EXECUTION)
          ========================================================================= -->
     <div id="view-team" class="view-page hidden">
+        
+        <!-- =========================================================================
+             👥 SECTION 10: CORE STUDENT LEADS & DOMAIN COORDINATORS (6 DOMAINS)
+             ========================================================================= -->
         <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center mb-8 sm:mb-10">
@@ -449,9 +473,13 @@
 
 
     <!-- =========================================================================
-         VIEW 4: ALUMNI SPOTLIGHT NETWORK
+         🎓 VIEW 4: ALUMNI SPOTLIGHT NETWORK
          ========================================================================= -->
     <div id="view-alumni" class="view-page hidden">
+        
+        <!-- =========================================================================
+             🎓 SECTION 11: ALUMNI SPOTLIGHT NETWORK & CAREER SUCCESS STORIES
+             ========================================================================= -->
         <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center mb-10 sm:mb-12">
@@ -470,9 +498,13 @@
 
 
     <!-- =========================================================================
-         VIEW 5: PROJECTS LAB
+         🚀 VIEW 5: PROJECTS LAB
          ========================================================================= -->
     <div id="view-projects" class="view-page hidden">
+        
+        <!-- =========================================================================
+             🚀 SECTION 12: FEATURED HARDWARE PROJECTS & INNOVATION WORKBENCH
+             ========================================================================= -->
         <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center mb-8 sm:mb-10">
@@ -499,9 +531,13 @@
 
 
     <!-- =========================================================================
-         VIEW 6: EVENTS & GALLERY
+         📅 VIEW 6: EVENTS & GALLERY
          ========================================================================= -->
     <div id="view-events" class="view-page hidden">
+        
+        <!-- =========================================================================
+             📅 SECTION 13: UPCOMING EVENTS, HACKATHONS & WORKSHOPS GALLERY
+             ========================================================================= -->
         <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
             
             <!-- Events Block -->
@@ -520,9 +556,13 @@
 
 
     <!-- =========================================================================
-         VIEW 7: JOIN IAC APPLICATION FORM
+         📝 VIEW 7: JOIN IAC APPLICATION FORM
          ========================================================================= -->
     <div id="view-join" class="view-page hidden">
+        
+        <!-- =========================================================================
+             📝 SECTION 14: STUDENT MEMBERSHIP APPLICATION REGISTRATION FORM
+             ========================================================================= -->
         <section class="py-12 sm:py-16 min-h-[80vh] flex items-center">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 
@@ -643,7 +683,7 @@
 
 
     <!-- =========================================================================
-         GLOBAL COMMUNITY & LOCATION SECTION
+         📍 SECTION 15: GLOBAL COMMUNITY SOCIAL HANDLES & IET DEPARTMENT LOCATION MAP
          ========================================================================= -->
     <section class="py-12 sm:py-16 border-t border-slate-700/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -746,7 +786,7 @@
 
 
     <!-- =========================================================================
-         GLOBAL FOOTER
+         🦶 SECTION 16: GLOBAL FOOTER & QUICK NAVIGATION LINKS
          ========================================================================= -->
     <footer class="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-700/40">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-xs">
@@ -789,7 +829,7 @@
 
 
     <!-- =========================================================================
-         REUSABLE MODAL DIALOG CONTAINERS & GLOBAL SEARCH MODAL
+         🔍 SECTION 17: GLOBAL COMMAND PALETTE SEARCH & REUSABLE MODAL DIALOGS
          ========================================================================= -->
     
     <!-- Global Command Search Modal (Ctrl + K) -->
