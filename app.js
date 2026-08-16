@@ -773,9 +773,8 @@ const IACApp = {
 
             // 1. Save to MongoDB Atlas API Backend with await
             try {
-                const apiHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                    ? 'http://localhost:5000' 
-                    : 'http://localhost:5000';
+                const hostname = window.location.hostname || 'localhost';
+                const apiHost = `http://${hostname}:5000`;
 
                 const response = await fetch(`${apiHost}/api/applications`, {
                     method: 'POST',
@@ -828,9 +827,8 @@ const IACApp = {
         const apiKey = prompt("🔑 Enter Admin Secret API Key to view received MongoDB Atlas applications:\n(Default key: iac_admin_secret_key_2026)");
         if (!apiKey) return;
 
-        const apiHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-            ? 'http://localhost:5000' 
-            : 'http://localhost:5000';
+        const hostname = window.location.hostname || 'localhost';
+        const apiHost = `http://${hostname}:5000`;
 
         fetch(`${apiHost}/api/applications`, {
             headers: { 'x-api-key': apiKey }
