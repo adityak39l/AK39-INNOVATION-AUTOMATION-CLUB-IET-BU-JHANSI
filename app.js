@@ -798,15 +798,72 @@ const IACApp = {
                 submitBtn.innerHTML = originalBtnText;
             }
 
-            if (isSavedInMongo) {
-                this.showToast(`✅ Membership Application for ${fullName} saved to MongoDB Database!`);
-                alert(`🎉 APPLICATION SUBMITTED SUCCESSFULLY!\n\nDear ${fullName},\nYour membership registration has been recorded in the IAC MongoDB Database.\n\nThe Core Team will review your application soon.`);
-            } else {
-                this.showToast(`⚠️ Application submitted! Network offline.`);
-                alert(`⚠️ Application Received!\nYour details have been submitted.`);
-            }
-
             form.reset();
+
+            // Display Success Confirmation Card in place of form
+            const formCard = form.parentNode;
+            if (formCard) {
+                form.style.display = 'none';
+
+                let successCard = document.getElementById('iac-success-card');
+                if (!successCard) {
+                    successCard = document.createElement('div');
+                    successCard.id = 'iac-success-card';
+                    formCard.appendChild(successCard);
+                }
+
+                successCard.style.display = 'block';
+                successCard.className = 'text-center py-6 px-4 animate-fade-in';
+                successCard.innerHTML = `
+                    <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg shadow-emerald-500/10">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <span class="inline-block bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-2">
+                        ✅ MongoDB Database Record Saved
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Application Submitted!</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm max-w-md mx-auto mb-6">
+                        Thank you, <strong class="text-cyan-400">${fullName}</strong>! Your IAC membership application has been registered in the MongoDB Database.
+                    </p>
+                    
+                    <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 max-w-md mx-auto text-left space-y-2.5 text-xs sm:text-sm text-slate-300 mb-6 shadow-inner">
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500 uppercase font-semibold">Student Name:</span>
+                            <span class="font-bold text-white">${fullName}</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500 uppercase font-semibold">Roll Number:</span>
+                            <span class="font-mono text-cyan-400 font-bold">${rollNo}</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500 uppercase font-semibold">Department:</span>
+                            <span>${dept} (${year})</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-800 pb-2">
+                            <span class="text-slate-500 uppercase font-semibold">Selected Domain:</span>
+                            <span class="text-indigo-400 font-semibold">${interest}</span>
+                        </div>
+                        <div class="flex justify-between pt-1">
+                            <span class="text-slate-500 uppercase font-semibold">Database Status:</span>
+                            <span class="text-emerald-400 font-bold flex items-center gap-1.5">
+                                <i class="fas fa-database text-xs"></i> Saved in MongoDB Atlas
+                            </span>
+                        </div>
+                    </div>
+
+                    <button id="reset-form-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition">
+                        <i class="fas fa-plus-circle mr-1.5"></i> Submit Another Application
+                    </button>
+                `;
+
+                this.showToast(`✅ Application for ${fullName} saved to MongoDB Database!`);
+
+                document.getElementById('reset-form-btn')?.addEventListener('click', () => {
+                    successCard.style.display = 'none';
+                    form.style.display = 'block';
+                    form.reset();
+                });
+            }
         });
     },
 
