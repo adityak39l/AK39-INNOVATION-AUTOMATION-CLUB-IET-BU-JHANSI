@@ -751,6 +751,13 @@ const IACApp = {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin text-xs"></i> Saving to MongoDB Atlas...`;
+            }
+
             const fullName = document.getElementById('fullName').value;
             const rollNo = document.getElementById('rollNo').value;
             const email = document.getElementById('email').value;
@@ -762,21 +769,34 @@ const IACApp = {
 
             const payload = { fullName, rollNo, email, phone, department: dept, year, interest };
 
-            // Save to MongoDB Atlas API Backend
+            let isSavedInMongo = false;
+
+            // 1. Save to MongoDB Atlas API Backend with await
             try {
                 const apiHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
                     ? 'http://localhost:5000' 
-                    : 'http://localhost:5000'; // Default API host
+                    : 'http://localhost:5000';
 
-                fetch(`${apiHost}/api/applications`, {
+                const response = await fetch(`${apiHost}/api/applications`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
-                }).then(res => res.json())
-                  .then(data => console.log('✅ Saved to MongoDB Atlas:', data))
-                  .catch(err => console.log('⚠️ Backend offline, proceeding with WhatsApp dispatch:', err));
+                });
+
+                const resData = await response.json();
+                if (resData.success) {
+                    isSavedInMongo = true;
+                    console.log('✅ Successfully saved to MongoDB Atlas:', resData.data);
+                } else {
+                    console.warn('⚠️ Server response error:', resData);
+                }
             } catch (err) {
-                console.warn('Backend request deferred:', err);
+                console.warn('⚠️ MongoDB API Error or Backend Offline:', err.message);
+            }
+
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
             }
 
             const message = `*NEW IAC MEMBERSHIP APPLICATION*%0A` +
@@ -788,9 +808,14 @@ const IACApp = {
                 `*Interest:* ${encodeURIComponent(interest)}%0A%0A` +
                 `Hello IAC Team! I would like to join the Innovation & Automation Club.`;
 
-            // WhatsApp Redirect
             const whatsappUrl = `https://wa.me/919876543210?text=${message}`;
-            alert(`Application Submitted Successfully!\nYour application has been registered into the MongoDB database.`);
+
+            if (isSavedInMongo) {
+                alert(`✅ SUCCESS!\nApplication for ${fullName} (${rollNo}) has been saved into MongoDB Atlas Database!\n\nClick OK to open WhatsApp notification.`);
+            } else {
+                alert(`⚠️ Application Registered!\nProceeding to send details to IAC Core Team on WhatsApp.`);
+            }
+
             window.open(whatsappUrl, '_blank');
             form.reset();
         });
