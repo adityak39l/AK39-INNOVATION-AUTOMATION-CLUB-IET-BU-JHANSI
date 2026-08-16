@@ -755,7 +755,7 @@ const IACApp = {
             const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin text-xs"></i> Saving to MongoDB Atlas...`;
+                submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin text-xs"></i> Submitting Application...`;
             }
 
             const fullName = document.getElementById('fullName').value;
@@ -771,7 +771,7 @@ const IACApp = {
 
             let isSavedInMongo = false;
 
-            // 1. Save to MongoDB Atlas API Backend with await
+            // 1. Save to API Backend with await
             try {
                 const hostname = window.location.hostname || 'localhost';
                 const apiHost = `http://${hostname}:5000`;
@@ -785,12 +785,12 @@ const IACApp = {
                 const resData = await response.json();
                 if (resData.success) {
                     isSavedInMongo = true;
-                    console.log('✅ Successfully saved to MongoDB Atlas:', resData.data);
+                    console.log('✅ Application saved successfully:', resData.data);
                 } else {
                     console.warn('⚠️ Server response error:', resData);
                 }
             } catch (err) {
-                console.warn('⚠️ MongoDB API Error or Backend Offline:', err.message);
+                console.warn('⚠️ API Error or Backend Offline:', err.message);
             }
 
             if (submitBtn) {
@@ -800,7 +800,7 @@ const IACApp = {
 
             form.reset();
 
-            // Display Success Confirmation Card in place of form
+            // Display Success Confirmation Card in place of form (Clean Student View)
             const formCard = form.parentNode;
             if (formCard) {
                 form.style.display = 'none';
@@ -819,11 +819,11 @@ const IACApp = {
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <span class="inline-block bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider mb-2">
-                        ✅ MongoDB Database Record Saved
+                        ✅ Membership Registered
                     </span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Application Submitted!</h3>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Application Submitted Successfully!</h3>
                     <p class="text-slate-300 text-xs sm:text-sm max-w-md mx-auto mb-6">
-                        Thank you, <strong class="text-cyan-400">${fullName}</strong>! Your IAC membership application has been registered in the MongoDB Database.
+                        Thank you, <strong class="text-cyan-400">${fullName}</strong>! Your B.Tech membership application has been registered with Innovation & Automation Club (IAC).
                     </p>
                     
                     <div class="bg-slate-900/90 border border-slate-700/60 rounded-2xl p-4 max-w-md mx-auto text-left space-y-2.5 text-xs sm:text-sm text-slate-300 mb-6 shadow-inner">
@@ -844,9 +844,9 @@ const IACApp = {
                             <span class="text-indigo-400 font-semibold">${interest}</span>
                         </div>
                         <div class="flex justify-between pt-1">
-                            <span class="text-slate-500 uppercase font-semibold">Database Status:</span>
+                            <span class="text-slate-500 uppercase font-semibold">Application Status:</span>
                             <span class="text-emerald-400 font-bold flex items-center gap-1.5">
-                                <i class="fas fa-database text-xs"></i> Saved in MongoDB Atlas
+                                <i class="fas fa-check-double text-xs"></i> Registered & Confirmed
                             </span>
                         </div>
                     </div>
@@ -856,7 +856,7 @@ const IACApp = {
                     </button>
                 `;
 
-                this.showToast(`✅ Application for ${fullName} saved to MongoDB Database!`);
+                this.showToast(`✅ Application for ${fullName} submitted successfully!`);
 
                 document.getElementById('reset-form-btn')?.addEventListener('click', () => {
                     successCard.style.display = 'none';
