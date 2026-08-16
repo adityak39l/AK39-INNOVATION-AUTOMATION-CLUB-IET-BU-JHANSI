@@ -62,8 +62,8 @@ code, pre { font-family: 'Fira Code', monospace; }
   max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1rem, 3vw, 2rem);
-  padding-right: clamp(1rem, 3vw, 2rem);
+  padding-left: clamp(0.75rem, 3vw, 2rem);
+  padding-right: clamp(0.75rem, 3vw, 2rem);
 }
 
 /* ==========================================================================
@@ -98,222 +98,24 @@ code, pre { font-family: 'Fira Code', monospace; }
 :root[data-theme="light"] header marquee .text-indigo-200 { color: #cbd5e1 !important; }
 :root[data-theme="light"] header marquee .text-indigo-400\/60 { color: #64748b !important; }
 
-:root[data-theme="light"] header .nav-link {
+:root[data-theme="light"] header h1,
+:root[data-theme="light"] header nav a,
+:root[data-theme="light"] header div,
+:root[data-theme="light"] header button:not(#theme-toggle-btn) {
   color: #f8fafc !important;
-  font-weight: 700 !important;
 }
 
-:root[data-theme="light"] header .nav-link:hover {
+:root[data-theme="light"] header nav a:hover {
   color: #38bdf8 !important;
-}
-
-:root[data-theme="light"] header h1 {
-  color: #ffffff !important;
-}
-
-:root[data-theme="light"] header p.text-indigo-500 {
-  color: #818cf8 !important;
-}
-
-:root[data-theme="light"] header button[onclick="IACApp.toggleCommandSearch()"] {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-color: #475569 !important;
-  color: #f8fafc !important;
-}
-
-:root[data-theme="light"] header button[onclick="IACApp.toggleCommandSearch()"] kbd {
-  background-color: #0f172a !important;
-  border-color: #334155 !important;
-  color: #94a3b8 !important;
-}
-
-:root[data-theme="light"] #mobile-nav {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-  color: #ffffff !important;
-}
-
-:root[data-theme="light"] #mobile-nav a {
-  color: #f8fafc !important;
-}
-
-:root[data-theme="light"] #mobile-nav a:hover {
-  color: #38bdf8 !important;
-}
-
-/* Card & Background Light Overrides */
-:root[data-theme="light"] .cyber-card {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
-}
-
-:root[data-theme="light"] .cyber-card:hover {
-  border-color: #4f46e5 !important;
-  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.15) !important;
-}
-
-:root[data-theme="light"] .bg-slate-900,
-:root[data-theme="light"] .bg-slate-950 {
-  background-color: #f1f5f9 !important;
-  border-color: #e2e8f0 !important;
-  color: #0f172a !important;
-}
-
-:root[data-theme="light"] .bg-slate-950\/60,
-:root[data-theme="light"] .bg-slate-950\/80,
-:root[data-theme="light"] .bg-slate-900\/60 {
-  background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-}
-
-:root[data-theme="light"] .text-white,
-:root[data-theme="light"] .text-slate-100,
-:root[data-theme="light"] .text-slate-200,
-:root[data-theme="light"] .text-slate-300 {
-  color: #0f172a !important;
-}
-
-:root[data-theme="light"] .text-slate-400,
-:root[data-theme="light"] .text-slate-500 {
-  color: #475569 !important;
-}
-
-/* Form inputs & dropdowns in light mode */
-:root[data-theme="light"] input,
-:root[data-theme="light"] select,
-:root[data-theme="light"] textarea {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
 }
 
 :root[data-theme="light"] select option {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-}
-
-:root[data-theme="light"] footer {
-  background-color: #ffffff !important;
-  border-top-color: #e2e8f0 !important;
-  color: #334155 !important;
-}
-
-/* ==========================================================================
-   FORM INPUT & SELECT DROPDOWN OPTION VISIBILITY FIX
-   ========================================================================== */
-
-input, select, textarea {
-  background-color: rgba(15, 23, 42, 0.8) !important;
-  color: #f8fafc !important;
-}
-
-select option {
   background-color: #0f172a !important;
-  color: #f8fafc !important;
-  padding: 10px !important;
+  color: #ffffff !important;
 }
 
 /* ==========================================================================
-   CONTINUOUS MARQUEE & TICKER
-   ========================================================================== */
-
-marquee {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-/* ==========================================================================
-   HARDWARE SIMULATOR GLOWING LED LIGHTS
-   ========================================================================== */
-
-.sim-led-off {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: #1e293b;
-  border: 2px solid #475569;
-  display: inline-block;
-  transition: all 0.25s ease;
-}
-
-.sim-led-on {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: #10b981;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 12px #10b981, 0 0 24px #10b981;
-  display: inline-block;
-  animation: pulseGreenGlow 1.2s infinite alternate;
-  transition: all 0.25s ease;
-}
-
-@keyframes pulseGreenGlow {
-  0% { transform: scale(0.95); box-shadow: 0 0 8px #10b981, 0 0 16px #10b981; }
-  100% { transform: scale(1.15); box-shadow: 0 0 16px #10b981, 0 0 32px #10b981; }
-}
-
-.sim-relay-off {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: #1e293b;
-  border: 2px solid #475569;
-  display: inline-block;
-  transition: all 0.25s ease;
-}
-
-.sim-relay-on {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: #06b6d4;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 12px #06b6d4, 0 0 24px #06b6d4;
-  display: inline-block;
-  animation: pulseCyanGlow 1.2s infinite alternate;
-  transition: all 0.25s ease;
-}
-
-@keyframes pulseCyanGlow {
-  0% { transform: scale(0.95); box-shadow: 0 0 8px #06b6d4, 0 0 16px #06b6d4; }
-  100% { transform: scale(1.15); box-shadow: 0 0 16px #06b6d4, 0 0 32px #06b6d4; }
-}
-
-/* ==========================================================================
-   THEME TOGGLE BUTTON & TOUCH TARGETS
-   ========================================================================== */
-
-.theme-toggle-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  color: var(--text-primary);
-  padding: 8px 14px;
-  min-height: 40px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.theme-toggle-btn:hover {
-  transform: scale(1.05);
-  border-color: #6366f1;
-}
-
-button, a {
-  touch-action: manipulation;
-}
-
-/* ==========================================================================
-   CUSTOM CARDS & RESPONSIVE EFFECTS
+   GLASSMORPHISM & CYBER HUD STYLING
    ========================================================================== */
 
 .cyber-nav {
@@ -321,60 +123,109 @@ button, a {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--nav-border);
-  transition: background 0.3s ease;
 }
 
 .cyber-card {
   background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-card);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cyber-card:hover {
-  border-color: #6366f1;
-  box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.25);
   transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 16px 40px -10px rgba(99, 102, 241, 0.3);
 }
 
+.theme-toggle-btn {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+  color: var(--text-primary);
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: #6366f1;
+  background: rgba(49, 46, 129, 0.4);
+}
+
+/* Pulse animation for live indicators */
 .pulse-live {
   width: 8px;
   height: 8px;
   background-color: #10b981;
   border-radius: 50%;
+  display: inline-block;
   box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   animation: pulseGreen 2s infinite;
-  display: inline-block;
 }
 
 @keyframes pulseGreen {
   0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-.code-hud {
-  background: #090d16;
-  border: 1px solid #1e293b;
-  border-radius: 16px;
-  font-family: 'Fira Code', monospace;
-  font-size: clamp(10px, 2vw, 12px);
-  color: #38bdf8;
-  padding: 16px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+/* High contrast explicit select dropdown styling */
+select option {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  padding: 10px !important;
 }
 
+/* Modal Overlay Styling */
 .modal-overlay {
   background: rgba(3, 7, 18, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-:root[data-theme="light"] .modal-overlay {
-  background: rgba(15, 23, 42, 0.4) !important;
+/* Hardware Simulator Indicator States */
+.sim-led-on {
+  width: 14px;
+  height: 14px;
+  background: #eab308;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #facc15;
+  display: inline-block;
 }
 
+.sim-led-off {
+  width: 14px;
+  height: 14px;
+  background: #334155;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.sim-relay-on {
+  width: 14px;
+  height: 14px;
+  background: #06b6d4;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #22d3ee;
+  display: inline-block;
+}
+
+.sim-relay-off {
+  width: 14px;
+  height: 14px;
+  background: #334155;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Crisp images */
 .crisp-img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -418,18 +269,40 @@ button, a {
   animation: fadeIn 0.3s ease;
 }
 
+/* ==========================================================================
+   MOBILE SCREEN RESPONSIVE HEADER ALIGNMENT (NO OVERFLOW / MASHING)
+   ========================================================================== */
+
 @media (max-width: 639px) {
+  header.cyber-nav {
+    width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
   .cyber-card {
-    padding: 1.25rem !important;
+    padding: 1.15rem !important;
     border-radius: 1.25rem !important;
   }
 
   .nav-link {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
 
   input, select, textarea {
-    font-size: 14px !important;
-    padding: 12px 14px !important;
+    font-size: 13px !important;
+    padding: 10px 12px !important;
+  }
+
+  /* Prevent logo & button squishing on 320px-450px screens */
+  header img {
+    max-height: 28px !important;
+  }
+
+  header h1 {
+    font-size: 0.75rem !important;
+  }
+
+  header p {
+    font-size: 7.5px !important;
   }
 }

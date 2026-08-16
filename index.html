@@ -11,8 +11,8 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS (with Cache Busting Query v4.0) -->
-    <link rel="stylesheet" href="styles.css?v=4.0">
+    <!-- Custom CSS (with Cache Busting Query v5.0) -->
+    <link rel="stylesheet" href="styles.css?v=5.0">
 </head>
 <body class="antialiased selection:bg-indigo-500 selection:text-white">
 
@@ -22,37 +22,37 @@
     <header class="sticky top-0 z-50 cyber-nav">
         
         <!-- CONTINUOUS RIGHT-TO-LEFT MARQUEE BANNER -->
-        <div class="bg-indigo-950/90 border-b border-indigo-500/30 py-2.5 px-4 text-xs font-semibold text-indigo-200 overflow-hidden">
+        <div class="bg-indigo-950/90 border-b border-indigo-500/30 py-2 px-3 text-[11px] sm:text-xs font-semibold text-indigo-200 overflow-hidden">
             <marquee behavior="scroll" direction="left" scrollamount="7" onmouseover="this.stop();" onmouseout="this.start();" class="flex items-center">
-                <span class="inline-flex items-center gap-2 text-cyan-400 font-extrabold mx-4"><span class="pulse-live"></span> B.TECH EIE LIVE HUB:</span>
-                <span class="mx-4">⚡ IAC Hardware Workshop 2026 Registrations Open Now!</span>
+                <span class="inline-flex items-center gap-1.5 text-cyan-400 font-extrabold mx-3"><span class="pulse-live"></span> B.TECH EIE LIVE HUB:</span>
+                <span class="mx-3">⚡ IAC Hardware Workshop 2026 Registrations Open Now!</span>
                 <span class="text-indigo-400/60 mx-2">•</span>
-                <span class="mx-4">🤖 New PLC & SCADA Process Control Lab Session Announced</span>
+                <span class="mx-3">🤖 New PLC & SCADA Process Control Lab Session Announced</span>
                 <span class="text-indigo-400/60 mx-2">•</span>
-                <span class="mx-4">🚀 Congratulations to EIE Alumni Placed at Siemens, TCS & Bosch</span>
+                <span class="mx-3">🚀 Congratulations to EIE Alumni Placed at Siemens, TCS & Bosch</span>
                 <span class="text-indigo-400/60 mx-2">•</span>
-                <span class="mx-4">📡 Join the Official IAC WhatsApp Community for Daily Project Updates</span>
+                <span class="mx-3">📡 Join the Official IAC WhatsApp Community for Daily Project Updates</span>
                 <span class="text-indigo-400/60 mx-2">•</span>
             </marquee>
         </div>
 
         <!-- Main Navigation Bar -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3.5 flex justify-between items-center">
             
-            <!-- Branding / Logo -->
-            <a href="#home" class="flex items-center space-x-3 group">
-                <div class="flex items-center space-x-2">
-                    <img src="assets/bu-logo.png.png" alt="BU Logo" class="h-9 w-auto crisp-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=BU&background=4f46e5&color=fff';">
-                    <div class="h-5 w-[1px] bg-slate-500/40"></div>
-                    <img src="assets/iac-logo.jpg.jpg" alt="IAC Logo" class="h-9 w-9 rounded-full crisp-img border border-indigo-500/40" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=IAC&background=0f172a&color=fff';">
+            <!-- Branding / Logo (Optimized for Mobile Screens) -->
+            <a href="#home" class="flex items-center space-x-2 sm:space-x-3 group shrink-0">
+                <div class="flex items-center space-x-1.5 sm:space-x-2">
+                    <img src="assets/bu-logo.png.png" alt="BU Logo" class="h-7 sm:h-9 w-auto crisp-img" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=BU&background=4f46e5&color=fff';">
+                    <div class="h-4 sm:h-5 w-[1px] bg-slate-500/40"></div>
+                    <img src="assets/iac-logo.jpg.jpg" alt="IAC Logo" class="h-7 sm:h-9 w-7 sm:w-9 rounded-full crisp-img border border-indigo-500/40" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=IAC&background=0f172a&color=fff';">
                 </div>
                 <div>
-                    <h1 class="font-extrabold leading-none tracking-tight text-base group-hover:text-indigo-500 transition">IAC HUB</h1>
-                    <p class="text-[10px] text-indigo-500 font-semibold mt-0.5 tracking-wider">B.TECH EIE • IET BU JHANSI</p>
+                    <h1 class="font-extrabold leading-none tracking-tight text-xs sm:text-base group-hover:text-indigo-500 transition">IAC HUB</h1>
+                    <p class="text-[8px] sm:text-[10px] text-indigo-500 font-semibold mt-0.5 tracking-wider">B.TECH EIE • BU JHANSI</p>
                 </div>
             </a>
 
-            <!-- Desktop Navigation Links -->
+            <!-- Desktop Navigation Links (Visible on LG Screens) -->
             <nav class="hidden lg:flex items-center space-x-6 text-xs font-semibold">
                 <a href="#home" class="nav-link py-1 hover:text-indigo-500 transition">Home</a>
                 <a href="#faculty" class="nav-link py-1 hover:text-indigo-500 transition">Staff & Faculty</a>
@@ -63,42 +63,63 @@
                 <a href="#events" class="nav-link py-1 hover:text-indigo-500 transition">Events & Gallery</a>
             </nav>
 
-            <!-- Light/Dark Mode Switcher & Command Search & Join CTA -->
-            <div class="flex items-center space-x-2 sm:space-x-3">
+            <!-- Navigation Controls (Mobile & Desktop Responsive Alignment) -->
+            <div class="flex items-center space-x-1.5 sm:space-x-2">
                 
-                <!-- GLOBAL COMMAND PALETTE SEARCH BUTTON (CTRL + K) -->
-                <button onclick="IACApp.toggleCommandSearch()" class="bg-slate-800/40 hover:bg-slate-800/80 border border-slate-700/50 text-slate-300 text-xs px-3 py-2 rounded-xl flex items-center gap-2 transition" title="Search Faculty, Projects, Labs (Ctrl + K)">
-                    <i class="fas fa-search text-indigo-400"></i>
+                <!-- GLOBAL COMMAND PALETTE SEARCH BUTTON -->
+                <button onclick="IACApp.toggleCommandSearch()" class="bg-slate-800/40 hover:bg-slate-800/80 border border-slate-700/50 text-slate-300 text-xs p-2 sm:px-3 sm:py-2 rounded-xl flex items-center gap-1.5 transition" title="Search Faculty, Projects, Labs (Ctrl + K)">
+                    <i class="fas fa-search text-indigo-400 text-xs sm:text-sm"></i>
                     <span class="hidden md:inline font-semibold">Search</span>
                     <kbd class="hidden md:inline-block bg-slate-900 border border-slate-700 px-1.5 py-0.5 text-[9px] font-mono rounded text-slate-400">Ctrl K</kbd>
                 </button>
 
+                <!-- MONGODB ATLAS ADMIN PORTAL BUTTON (DESKTOP VISIBLE, MOBILE MENU EMBEDDED) -->
+                <button onclick="IACApp.openAdminPortal()" class="hidden md:flex bg-slate-800/40 hover:bg-slate-800/80 border border-emerald-500/40 text-emerald-400 text-xs px-3 py-2 rounded-xl items-center gap-1.5 transition" title="View Received Applications">
+                    <i class="fas fa-database text-emerald-400"></i>
+                    <span class="font-semibold">Admin DB</span>
+                </button>
+
                 <!-- LIGHT / DARK MODE TOGGLE BUTTON -->
-                <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
-                    <i id="theme-icon" class="fas fa-sun text-yellow-400"></i>
+                <button id="theme-toggle-btn" class="theme-toggle-btn p-2 sm:px-3 sm:py-2" title="Toggle Light/Dark Theme">
+                    <i id="theme-icon" class="fas fa-sun text-yellow-400 text-xs sm:text-sm"></i>
                     <span id="theme-text" class="hidden sm:inline">Light Mode</span>
                 </button>
 
-                <a href="#join" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3.5 sm:px-4 py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center gap-1.5">
+                <!-- JOIN CTA BUTTON (VISIBLE ON DESKTOP & TABLET) -->
+                <a href="#join" class="hidden sm:flex bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3.5 py-2 sm:py-2.5 rounded-xl transition shadow-lg shadow-indigo-600/30 items-center gap-1.5">
                     <i class="fas fa-user-plus text-[10px]"></i> <span>Join IAC</span>
                 </a>
 
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl border border-slate-700/40 hover:bg-slate-800/40 transition">
-                    <i class="fas fa-bars text-lg"></i>
+                <!-- MOBILE HAMBURGER MENU BUTTON -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl bg-indigo-600/10 border border-indigo-500/40 text-indigo-400 hover:bg-indigo-600/30 transition">
+                    <i class="fas fa-bars text-sm sm:text-base"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-700/40 bg-slate-900/95 px-4 py-4 space-y-2 text-sm font-semibold">
-            <a href="#home" class="block py-2 hover:text-indigo-500">Home</a>
-            <a href="#faculty" class="block py-2 hover:text-indigo-500">Staff & Faculty</a>
-            <a href="#team" class="block py-2 hover:text-indigo-500">Core Team</a>
-            <a href="#curriculum" class="block py-2 hover:text-indigo-500">B.Tech Labs & Curriculum</a>
-            <a href="#alumni" class="block py-2 hover:text-indigo-500">Alumni Spotlight</a>
-            <a href="#projects" class="block py-2 hover:text-indigo-500">Projects Lab</a>
-            <a href="#events" class="block py-2 hover:text-indigo-500">Events & Gallery</a>
-            <a href="#join" class="block py-2 text-indigo-500 font-bold">Join IAC Application</a>
+        <!-- Mobile Navigation Drawer Menu (Ultra Clean & Well Spaced) -->
+        <div id="mobile-nav" class="hidden lg:hidden border-t border-slate-700/40 bg-slate-900/98 px-4 py-5 space-y-3 text-xs font-semibold shadow-2xl">
+            
+            <!-- Mobile Action CTAs -->
+            <div class="grid grid-cols-2 gap-2 pb-3 border-b border-slate-800">
+                <a href="#join" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold p-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 transition">
+                    <i class="fas fa-user-plus text-[10px]"></i> <span>Join Application</span>
+                </a>
+                <button onclick="IACApp.openAdminPortal()" class="bg-slate-800 border border-emerald-500/40 text-emerald-400 font-bold p-2.5 rounded-xl text-center flex items-center justify-center gap-1.5 transition">
+                    <i class="fas fa-database text-emerald-400 text-[10px]"></i> <span>Admin DB</span>
+                </button>
+            </div>
+
+            <!-- Mobile Links -->
+            <div class="space-y-1 text-slate-300">
+                <a href="#home" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-home text-indigo-400 w-4"></i> Home Overview</a>
+                <a href="#faculty" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-user-tie text-indigo-400 w-4"></i> Staff & Faculty Mentors</a>
+                <a href="#team" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-users text-indigo-400 w-4"></i> Core Team & Leadership</a>
+                <a href="#curriculum" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-microchip text-indigo-400 w-4"></i> B.Tech Labs & Curriculum</a>
+                <a href="#alumni" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-graduation-cap text-indigo-400 w-4"></i> Alumni Spotlight</a>
+                <a href="#projects" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-project-diagram text-indigo-400 w-4"></i> Projects Workbench</a>
+                <a href="#events" class="flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-slate-800 hover:text-indigo-400 transition"><i class="fas fa-calendar-alt text-indigo-400 w-4"></i> Workshops & Events</a>
+            </div>
         </div>
     </header>
 
@@ -109,19 +130,19 @@
     <div id="view-home" class="view-page">
         
         <!-- HERO SECTION -->
-        <section class="relative pt-16 sm:pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section class="relative pt-12 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
             <div class="max-w-6xl mx-auto text-center relative z-10">
                 
                 <!-- B.Tech Department Badge -->
                 <div class="mb-3">
-                    <span class="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 text-[11px] sm:text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest">
+                    <span class="inline-flex items-center gap-2 bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 text-[10px] sm:text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-widest">
                         <span class="pulse-live"></span> B.TECH ELECTRONICS & INSTRUMENTATION ENGINEERING (EIE)
                     </span>
                 </div>
 
                 <!-- Club Official Motto / Theme Tagline Badge -->
                 <div class="mb-6">
-                    <span class="inline-flex items-center gap-2 bg-indigo-600/20 text-cyan-400 border border-indigo-500/40 text-xs sm:text-sm font-black px-5 py-2 rounded-2xl uppercase tracking-widest shadow-lg shadow-indigo-500/10">
+                    <span class="inline-flex items-center gap-2 bg-indigo-600/20 text-cyan-400 border border-indigo-500/40 text-[11px] sm:text-sm font-black px-4 sm:px-5 py-2 rounded-2xl uppercase tracking-widest shadow-lg shadow-indigo-500/10">
                         <i class="fas fa-rocket text-indigo-400"></i> { INNOVATE - AUTOMATE - INSPIRE }
                     </span>
                 </div>
@@ -133,12 +154,12 @@
                 </h1>
 
                 <!-- Subtitle -->
-                <p class="text-sm sm:text-lg max-w-3xl mx-auto leading-relaxed mb-10 text-slate-400">
+                <p class="text-xs sm:text-lg max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10 text-slate-400">
                     The official engineering hub of Electronics & Instrumentation Engineering students at Bundelkhand University. Managed & driven by student leaders in Embedded Microcontrollers, Industrial Automation, SCADA, Robotics, and Biomedical Instrumentation.
                 </p>
 
                 <!-- Action Buttons -->
-                <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
                     <a href="#join" class="bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
                         <span>Come On Board With IAC</span>
                         <i class="fas fa-arrow-right text-xs"></i>
@@ -167,34 +188,34 @@
             </div>
         </section>
 
-        <!-- CONTINUOUS TECH STACK MOVING MARQUEE TICKER (EXECUTIVE DARK NAVY MATCHED TO TOP MARQUEE) -->
-        <section class="py-4 border-y border-indigo-500/30 overflow-hidden bg-indigo-950/90 text-indigo-200">
-            <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" class="text-xs font-bold">
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-microchip"></i> Arduino Microcontrollers</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-wifi"></i> ESP32 IoT Telemetry</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-industry"></i> Siemens PLC Automation</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-desktop"></i> SCADA & DCS Control</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-wave-square"></i> LabVIEW Interfacing</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-robot"></i> Robotics & Rovers</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-heartbeat"></i> Bio-Medical ECG</span>
-                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-4 py-2 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-tools"></i> PCB Layout & Etching</span>
+        <!-- CONTINUOUS TECH STACK MOVING MARQUEE TICKER (EXECUTIVE DARK NAVY - LEFT TO RIGHT DIRECTION) -->
+        <section class="py-3.5 border-y border-indigo-500/30 overflow-hidden bg-indigo-950/90 text-indigo-200">
+            <marquee behavior="scroll" direction="right" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" class="text-xs font-bold">
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-microchip"></i> Arduino Microcontrollers</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-wifi"></i> ESP32 IoT Telemetry</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-industry"></i> Siemens PLC Automation</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-desktop"></i> SCADA & DCS Control</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-wave-square"></i> LabVIEW Interfacing</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-robot"></i> Robotics & Rovers</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-heartbeat"></i> Bio-Medical ECG</span>
+                <span class="bg-indigo-500/20 text-cyan-400 border border-indigo-500/40 px-3.5 py-1.5 rounded-xl inline-flex items-center gap-2 mx-2"><i class="fas fa-tools"></i> PCB Layout & Etching</span>
             </marquee>
         </section>
 
         <!-- HOD WELCOME CARD & LIVE EVENT COUNTDOWN TICKER -->
-        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
                 
                 <!-- HOD Welcome Message featuring Dr. Neha Jain's Photo -->
                 <div class="cyber-card lg:col-span-2 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
-                            <img src="assets/faculty/neha.jpg.jpeg" alt="Dr. Neha Jain" class="w-20 h-20 rounded-2xl object-cover border-2 border-indigo-500/60 shadow-lg crisp-img"
+                            <img src="assets/faculty/neha.jpg.jpeg" alt="Dr. Neha Jain" class="w-16 sm:w-20 h-16 sm:h-20 rounded-2xl object-cover border-2 border-indigo-500/60 shadow-lg crisp-img"
                                 onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Dr+Neha+Jain&background=4f46e5&color=fff';">
                             <div>
-                                <h3 class="text-xl sm:text-2xl font-bold">Er. Neha Jain</h3>
+                                <h3 class="text-lg sm:text-2xl font-bold">Er. Neha Jain</h3>
                                 <p class="text-xs text-indigo-500 font-semibold">Coordinator / Head of Department (HOD)</p>
-                                <span class="text-[11px] text-slate-400 font-medium block mt-0.5">Department of EIE, Bundelkhand University</span>
+                                <span class="text-[10px] sm:text-[11px] text-slate-400 font-medium block mt-0.5">Department of EIE, Bundelkhand University</span>
                             </div>
                         </div>
 
@@ -204,7 +225,7 @@
                     </div>
 
                     <div class="flex justify-between items-center text-xs text-slate-400 border-t border-slate-700/40 pt-3">
-                        <span><i class="fas fa-certificate text-indigo-500 mr-1"></i> NAAC Accredited Campus</span>
+                        <span><i class="fas fa-certificate text-indigo-500 mr-1"></i> NAAC Accredited</span>
                         <button onclick="IACApp.openFacultyModal('f1')" class="text-indigo-500 font-bold hover:underline">View HOD Profile →</button>
                     </div>
                 </div>
@@ -222,7 +243,7 @@
 
                         <div class="text-center p-4 rounded-2xl bg-slate-950/80 border border-slate-800 mb-6">
                             <span class="text-[10px] text-slate-400 uppercase tracking-widest block mb-1">Event Starts In</span>
-                            <div id="countdown-timer" class="text-lg font-black text-cyan-400 font-mono">2d : 14h : 45m : 12s</div>
+                            <div id="countdown-timer" class="text-base sm:text-lg font-black text-cyan-400 font-mono">2d : 14h : 45m : 12s</div>
                         </div>
                     </div>
 
@@ -234,65 +255,65 @@
         </section>
 
         <!-- LIVE INTERACTIVE HARDWARE SIMULATOR WIDGET -->
-        <section class="py-16 border-t border-slate-700/40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12 sm:py-16 border-t border-slate-700/40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Interactive B.Tech Workbench</span>
-                <h2 class="text-3xl font-black">Live Embedded Hardware Simulator</h2>
-                <p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">
+                <h2 class="text-2xl sm:text-3xl font-black">Live Embedded Hardware Simulator</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mt-2">
                     Click the control buttons below to simulate switching ON/OFF an ESP32 Pin 13 LED, PLC Relay Coil, and reading an ADC sensor live on screen!
                 </p>
             </div>
 
-            <div class="cyber-card max-w-4xl mx-auto rounded-3xl p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="cyber-card max-w-4xl mx-auto rounded-3xl p-5 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <!-- Controls Side -->
-                <div class="space-y-4">
-                    <h4 class="font-bold text-sm text-white mb-2 flex items-center gap-2">
+                <div class="space-y-3.5">
+                    <h4 class="font-bold text-xs sm:text-sm text-white mb-2 flex items-center gap-2">
                         <i class="fas fa-sliders-h text-indigo-500"></i> Hardware Control Switches
                     </h4>
 
-                    <button onclick="window.IACApp.toggleLed()" class="w-full bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 p-4 rounded-2xl flex items-center justify-between text-xs font-bold text-white transition shadow-md">
-                        <span class="flex items-center gap-2.5"><i class="fas fa-lightbulb text-yellow-400 text-base"></i> Toggle ESP32 Pin 13 LED</span>
-                        <span class="bg-indigo-600 text-white text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider">TOGGLE</span>
+                    <button onclick="window.IACApp.toggleLed()" class="w-full bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/50 p-3.5 rounded-2xl flex items-center justify-between text-xs font-bold text-white transition shadow-md">
+                        <span class="flex items-center gap-2"><i class="fas fa-lightbulb text-yellow-400 text-base"></i> ESP32 Pin 13 LED</span>
+                        <span class="bg-indigo-600 text-white text-[9px] sm:text-[10px] px-2 py-1 rounded-md uppercase tracking-wider">TOGGLE</span>
                     </button>
 
-                    <button onclick="window.IACApp.toggleRelay()" class="w-full bg-cyan-600/20 hover:bg-cyan-600/40 border border-cyan-500/50 p-4 rounded-2xl flex items-center justify-between text-xs font-bold text-white transition shadow-md">
-                        <span class="flex items-center gap-2.5"><i class="fas fa-bolt text-cyan-400 text-base"></i> Toggle Siemens PLC Relay</span>
-                        <span class="bg-cyan-600 text-white text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider">TOGGLE</span>
+                    <button onclick="window.IACApp.toggleRelay()" class="w-full bg-cyan-600/20 hover:bg-cyan-600/40 border border-cyan-500/50 p-3.5 rounded-2xl flex items-center justify-between text-xs font-bold text-white transition shadow-md">
+                        <span class="flex items-center gap-2"><i class="fas fa-bolt text-cyan-400 text-base"></i> Siemens PLC Relay</span>
+                        <span class="bg-cyan-600 text-white text-[9px] sm:text-[10px] px-2 py-1 rounded-md uppercase tracking-wider">TOGGLE</span>
                     </button>
 
-                    <button onclick="window.IACApp.readAdc()" class="w-full bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/50 p-4 rounded-2xl flex items-center justify-between text-xs font-bold text-white transition shadow-md">
-                        <span class="flex items-center gap-2.5"><i class="fas fa-wave-square text-emerald-400 text-base"></i> Read Pressure Sensor ADC</span>
-                        <span class="bg-emerald-600 text-white text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider">SAMPLE</span>
+                    <button onclick="window.IACApp.readAdc()" class="w-full bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/50 p-3.5 rounded-2xl flex items-center justify-between text-xs font-bold text-white transition shadow-md">
+                        <span class="flex items-center gap-2"><i class="fas fa-wave-square text-emerald-400 text-base"></i> Pressure Sensor ADC</span>
+                        <span class="bg-emerald-600 text-white text-[9px] sm:text-[10px] px-2 py-1 rounded-md uppercase tracking-wider">SAMPLE</span>
                     </button>
                 </div>
 
                 <!-- Visual Output Display Side -->
-                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-4 font-mono text-xs shadow-inner">
-                    <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-400 font-bold">
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-3 font-mono text-xs shadow-inner">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 font-bold">
                         <span>SYS_INDICATOR</span>
                         <span class="text-cyan-400">HARDWARE LOG</span>
                     </div>
 
-                    <div class="flex items-center justify-between py-2 border-b border-slate-900">
+                    <div class="flex items-center justify-between py-1.5 border-b border-slate-900">
                         <span class="text-slate-300">ESP32 Pin 13 LED:</span>
                         <div class="flex items-center gap-2">
                             <span id="sim-led-indicator" class="sim-led-off"></span>
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-between py-2 border-b border-slate-900">
+                    <div class="flex items-center justify-between py-1.5 border-b border-slate-900">
                         <span class="text-slate-300">Siemens PLC Relay:</span>
                         <div class="flex items-center gap-2">
                             <span id="sim-relay-indicator" class="sim-relay-off"></span>
                         </div>
                     </div>
 
-                    <div class="flex items-center justify-between py-2 border-b border-slate-900">
+                    <div class="flex items-center justify-between py-1.5 border-b border-slate-900">
                         <span class="text-slate-300">Pressure Sensor ADC:</span>
-                        <span id="sim-adc-display" class="text-emerald-400 font-bold text-sm">342 mV</span>
+                        <span id="sim-adc-display" class="text-emerald-400 font-bold text-xs sm:text-sm">342 mV</span>
                     </div>
 
-                    <div id="sim-status-text" class="text-[10px] text-indigo-400 pt-1 text-center font-bold">
+                    <div id="sim-status-text" class="text-[9px] sm:text-[10px] text-indigo-400 pt-1 text-center font-bold">
                         READY • CLICK BUTTONS ON LEFT TO TEST
                     </div>
                 </div>
@@ -300,40 +321,40 @@
         </section>
 
         <!-- B.TECH ENGINEERING LABS SHOWCASE -->
-        <section id="curriculum" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+        <section id="curriculum" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 sm:mb-16">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">B.Tech EIE Curriculum Integration</span>
-                <h2 class="text-3xl sm:text-4xl font-black">Specialized Engineering Laboratories</h2>
+                <h2 class="text-2xl sm:text-4xl font-black">Specialized Engineering Laboratories</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                <div class="cyber-card p-6 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-xl mb-4"><i class="fas fa-microchip"></i></div>
-                    <h3 class="text-lg font-bold mb-2">Microprocessors & Embedded</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+                <div class="cyber-card p-5 sm:p-6 rounded-3xl">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-lg sm:text-xl mb-4"><i class="fas fa-microchip"></i></div>
+                    <h3 class="text-base sm:text-lg font-bold mb-2">Microprocessors & Embedded</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
                         8085/8086 Assembly, ARM Cortex, ESP32 Wi-Fi architecture, C++ firmware, and real-time operating systems (RTOS).
                     </p>
                 </div>
 
-                <div class="cyber-card p-6 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-xl mb-4"><i class="fas fa-industry"></i></div>
-                    <h3 class="text-lg font-bold mb-2">Process Control & PLC</h3>
+                <div class="cyber-card p-5 sm:p-6 rounded-3xl">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-lg sm:text-xl mb-4"><i class="fas fa-industry"></i></div>
+                    <h3 class="text-base sm:text-lg font-bold mb-2">Process Control & PLC</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
                         Industrial ladder logic programming, Siemens S7 PLCs, Modbus RS485 telemetry, and SCADA monitoring dashboards.
                     </p>
                 </div>
 
-                <div class="cyber-card p-6 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-xl mb-4"><i class="fas fa-heartbeat"></i></div>
-                    <h3 class="text-lg font-bold mb-2">Biomedical Instrumentation</h3>
+                <div class="cyber-card p-5 sm:p-6 rounded-3xl">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-lg sm:text-xl mb-4"><i class="fas fa-heartbeat"></i></div>
+                    <h3 class="text-base sm:text-lg font-bold mb-2">Biomedical Instrumentation</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
                         Bio-signal acquisition (ECG, EMG, EEG), active op-amp filtering, isolation amplifiers, and LabVIEW GUI processing.
                     </p>
                 </div>
 
-                <div class="cyber-card p-6 rounded-3xl">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-xl mb-4"><i class="fas fa-satellite-dish"></i></div>
-                    <h3 class="text-lg font-bold mb-2">Sensors & Transducers</h3>
+                <div class="cyber-card p-5 sm:p-6 rounded-3xl">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 flex items-center justify-center text-lg sm:text-xl mb-4"><i class="fas fa-satellite-dish"></i></div>
+                    <h3 class="text-base sm:text-lg font-bold mb-2">Sensors & Transducers</h3>
                     <p class="text-xs text-slate-400 leading-relaxed">
                         Precision RTDs, thermocouples, LVDTs, capacitive pressure sensors, and strain gauge signal conditioning circuits.
                     </p>
@@ -341,13 +362,13 @@
             </div>
 
             <!-- DOWNLOADABLE LAB MANUALS SECTION -->
-            <div class="cyber-card rounded-3xl p-6 sm:p-8 border border-slate-700/40">
+            <div class="cyber-card rounded-3xl p-5 sm:p-8 border border-slate-700/40">
                 <div class="flex items-center justify-between mb-6">
                     <div>
-                        <h3 class="text-xl font-bold">Downloadable B.Tech Lab Manuals</h3>
+                        <h3 class="text-lg sm:text-xl font-bold">Downloadable B.Tech Lab Manuals</h3>
                         <p class="text-xs text-slate-400 mt-1">Official EIE department lab manuals & experiment guidelines</p>
                     </div>
-                    <i class="fas fa-file-download text-2xl text-indigo-500"></i>
+                    <i class="fas fa-file-download text-xl sm:text-2xl text-indigo-500"></i>
                 </div>
 
                 <div id="lab-manuals-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -362,36 +383,36 @@
          VIEW 2: STAFF MEMBERS & FACULTY HUB
          ========================================================================= -->
     <div id="view-faculty" class="view-page hidden">
-        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center mb-12">
+            <div class="text-center mb-10 sm:mb-12">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Department Mentors</span>
-                <h2 class="text-3xl sm:text-4xl font-black">Faculty & Academic Mentors</h2>
-                <p class="text-slate-400 text-sm max-w-2xl mx-auto mt-2">
+                <h2 class="text-2xl sm:text-4xl font-black">Faculty & Academic Mentors</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mt-2">
                     Department of Electronics & Instrumentation Engineering (EIE) faculty members guiding B.Tech engineering research and IAC club projects.
                 </p>
             </div>
 
             <!-- Search & Filter Controls -->
-            <div class="max-w-4xl mx-auto mb-10 space-y-4">
+            <div class="max-w-4xl mx-auto mb-8 sm:mb-10 space-y-3.5">
                 <!-- Search Bar -->
                 <div class="relative">
                     <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
-                    <input type="text" id="faculty-search" placeholder="Search faculty by name, designation, or qualification..." 
-                        class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-2xl pl-11 pr-4 py-3.5 text-sm placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+                    <input type="text" id="faculty-search" placeholder="Search faculty by name, designation..." 
+                        class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-2xl pl-11 pr-4 py-3 text-xs sm:text-sm placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
                 </div>
 
                 <!-- Category Filters -->
-                <div class="flex flex-wrap justify-center gap-2">
-                    <button onclick="IACApp.setFacultyCategory('all')" data-category="all" class="faculty-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-md transition">All Mentors</button>
-                    <button onclick="IACApp.setFacultyCategory('hod')" data-category="hod" class="faculty-cat-btn px-4 py-2 rounded-xl text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">HOD & Coordinator</button>
-                    <button onclick="IACApp.setFacultyCategory('assistant_professor')" data-category="assistant_professor" class="faculty-cat-btn px-4 py-2 rounded-xl text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Assistant Professors</button>
-                    <button onclick="IACApp.setFacultyCategory('teaching_assistant')" data-category="teaching_assistant" class="faculty-cat-btn px-4 py-2 rounded-xl text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Teaching Assistants</button>
+                <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+                    <button onclick="IACApp.setFacultyCategory('all')" data-category="all" class="faculty-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold bg-indigo-600 text-white shadow-md transition">All Mentors</button>
+                    <button onclick="IACApp.setFacultyCategory('hod')" data-category="hod" class="faculty-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">HOD & Coordinator</button>
+                    <button onclick="IACApp.setFacultyCategory('assistant_professor')" data-category="assistant_professor" class="faculty-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Assistant Professors</button>
+                    <button onclick="IACApp.setFacultyCategory('teaching_assistant')" data-category="teaching_assistant" class="faculty-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Teaching Assistants</button>
                 </div>
             </div>
 
             <!-- Faculty Grid Container -->
-            <div id="faculty-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="faculty-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Dynamically rendered via app.js -->
             </div>
         </section>
@@ -402,25 +423,25 @@
          VIEW 3: IAC CORE TEAM & DOMAINS (OUR LEADERSHIP & EXECUTION)
          ========================================================================= -->
     <div id="view-team" class="view-page hidden">
-        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center mb-10">
-                <span class="inline-block bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest mb-3">
+            <div class="text-center mb-8 sm:mb-10">
+                <span class="inline-block bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 text-[10px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest mb-3">
                     Our Leadership & Execution
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-black">IAC Core Team</h2>
-                <p class="text-slate-400 text-sm max-w-2xl mx-auto mt-2">
+                <h2 class="text-2xl sm:text-4xl font-black">IAC Core Team</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mt-2">
                     Tap on any domain tab below to explore official domain leads and coordinators.
                 </p>
             </div>
 
             <!-- Domain Tabs -->
-            <div id="domain-tabs" class="flex flex-wrap justify-center gap-2 mb-10">
+            <div id="domain-tabs" class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10">
                 <!-- Dynamically rendered via app.js -->
             </div>
 
             <!-- Core Team Grid Container -->
-            <div id="team-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div id="team-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto">
                 <!-- Dynamically rendered via app.js -->
             </div>
         </section>
@@ -431,17 +452,17 @@
          VIEW 4: ALUMNI SPOTLIGHT NETWORK
          ========================================================================= -->
     <div id="view-alumni" class="view-page hidden">
-        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center mb-12">
+            <div class="text-center mb-10 sm:mb-12">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Excellence & Legacy</span>
-                <h2 class="text-3xl sm:text-4xl font-black">Our Alumni Spotlight</h2>
-                <p class="text-slate-400 text-sm max-w-2xl mx-auto mt-2">
+                <h2 class="text-2xl sm:text-4xl font-black">Our Alumni Spotlight</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mt-2">
                     B.Tech EIE graduates leading engineering innovation and research across global industry leaders.
                 </p>
             </div>
 
-            <div id="alumni-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div id="alumni-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Dynamically rendered via app.js -->
             </div>
         </section>
@@ -452,25 +473,25 @@
          VIEW 5: PROJECTS LAB
          ========================================================================= -->
     <div id="view-projects" class="view-page hidden">
-        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center mb-10">
+            <div class="text-center mb-8 sm:mb-10">
                 <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Innovation Showcase</span>
-                <h2 class="text-3xl sm:text-4xl font-black">Departmental & IAC Projects</h2>
-                <p class="text-slate-400 text-sm max-w-2xl mx-auto mt-2">
+                <h2 class="text-2xl sm:text-4xl font-black">Departmental & IAC Projects</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto mt-2">
                     Hardware prototypes, embedded automation systems, and biomedical instrumentation built by B.Tech EIE students.
                 </p>
             </div>
 
             <!-- Category Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-2 mb-10">
-                <button onclick="IACApp.filterProjects('all')" data-category="all" class="project-cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-md transition">All Projects</button>
-                <button onclick="IACApp.filterProjects('iot')" data-category="iot" class="project-cat-btn px-4 py-2 rounded-xl text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">IoT & Automation</button>
-                <button onclick="IACApp.filterProjects('embedded')" data-category="embedded" class="project-cat-btn px-4 py-2 rounded-xl text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Embedded Systems</button>
-                <button onclick="IACApp.filterProjects('control')" data-category="control" class="project-cat-btn px-4 py-2 rounded-xl text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Sensors & Control</button>
+            <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10">
+                <button onclick="IACApp.filterProjects('all')" data-category="all" class="project-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold bg-indigo-600 text-white shadow-md transition">All Projects</button>
+                <button onclick="IACApp.filterProjects('iot')" data-category="iot" class="project-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">IoT & Automation</button>
+                <button onclick="IACApp.filterProjects('embedded')" data-category="embedded" class="project-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Embedded Systems</button>
+                <button onclick="IACApp.filterProjects('control')" data-category="control" class="project-cat-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-slate-700/40 text-slate-400 hover:bg-slate-800/40 transition">Sensors & Control</button>
             </div>
 
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Dynamically rendered via app.js -->
             </div>
         </section>
@@ -481,16 +502,16 @@
          VIEW 6: EVENTS & GALLERY
          ========================================================================= -->
     <div id="view-events" class="view-page hidden">
-        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
             
             <!-- Events Block -->
             <div>
-                <div class="text-center mb-10">
+                <div class="text-center mb-8 sm:mb-10">
                     <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Workshops & Bootcamps</span>
-                    <h2 class="text-3xl sm:text-4xl font-black">Upcoming Events</h2>
+                    <h2 class="text-2xl sm:text-4xl font-black">Upcoming Events</h2>
                 </div>
 
-                <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
                     <!-- Dynamically rendered via app.js -->
                 </div>
             </div>
@@ -502,30 +523,30 @@
          VIEW 7: JOIN IAC APPLICATION FORM
          ========================================================================= -->
     <div id="view-join" class="view-page hidden">
-        <section class="py-16 min-h-[80vh] flex items-center">
+        <section class="py-12 sm:py-16 min-h-[80vh] flex items-center">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 
-                <div class="text-center mb-10">
-                    <span class="inline-block bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-widest mb-3">
+                <div class="text-center mb-8 sm:mb-10">
+                    <span class="inline-block bg-indigo-500/10 text-indigo-500 border border-indigo-500/30 text-[10px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest mb-3">
                         Membership Application
                     </span>
-                    <h2 class="text-3xl sm:text-4xl font-black">Join Innovation & Automation Club</h2>
-                    <p class="text-slate-400 text-sm mt-2">
+                    <h2 class="text-2xl sm:text-4xl font-black">Join Innovation & Automation Club</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm mt-2">
                         Be part of EIE Department's official B.Tech hardware & software engineering community at Bundelkhand University.
                     </p>
                 </div>
 
                 <!-- Registration Form Card -->
-                <div class="cyber-card rounded-3xl p-6 sm:p-10">
-                    <form id="iac-registration-form" class="space-y-6">
+                <div class="cyber-card rounded-3xl p-5 sm:p-10">
+                    <form id="iac-registration-form" class="space-y-5 sm:space-y-6">
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                             <div>
                                 <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
                                     Full Name <span class="text-indigo-500">*</span>
                                 </label>
                                 <input type="text" id="fullName" required placeholder="e.g. Rahul Sharma" 
-                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 transition">
                             </div>
 
                             <div>
@@ -533,17 +554,17 @@
                                     University Roll / Enrollment No. <span class="text-indigo-500">*</span>
                                 </label>
                                 <input type="text" id="rollNo" required placeholder="e.g. 230010..." 
-                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 transition">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                             <div>
                                 <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
                                     Email Address <span class="text-indigo-500">*</span>
                                 </label>
                                 <input type="email" id="email" required placeholder="student@example.com" 
-                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 transition">
                             </div>
 
                             <div>
@@ -551,18 +572,18 @@
                                     WhatsApp Phone No. <span class="text-indigo-500">*</span>
                                 </label>
                                 <input type="tel" id="phone" required placeholder="+91 9876543210" 
-                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 transition">
                             </div>
                         </div>
 
                         <!-- Department & Year Dropdown Controls with High-Contrast Options -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                             <div>
                                 <label for="department" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
                                     Department <span class="text-indigo-500">*</span>
                                 </label>
                                 <select id="department" required 
-                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 transition">
                                     <option value="EIE" selected class="bg-slate-900 text-white py-2">Electronics & Instrumentation Engineering (EIE)</option>
                                     <option value="BME" class="bg-slate-900 text-white py-2">Biomedical Engineering (BME)</option>
                                     <option value="BT" class="bg-slate-900 text-white py-2">Biotechnology Engineering (BT)</option>
@@ -578,7 +599,7 @@
                                     Year of B.Tech Study <span class="text-indigo-500">*</span>
                                 </label>
                                 <select id="year" required 
-                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                                    class="w-full bg-slate-900 border border-slate-700/50 text-white rounded-xl px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-indigo-500 transition">
                                     <option value="1st Year" class="bg-slate-900 text-white py-2">1st Year (Session 2026-27)</option>
                                     <option value="2nd Year" selected class="bg-slate-900 text-white py-2">2nd Year</option>
                                     <option value="3rd Year" class="bg-slate-900 text-white py-2">3rd Year</option>
@@ -591,28 +612,28 @@
                             <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
                                 Primary Technical Interest <span class="text-indigo-500">*</span>
                             </label>
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                                <label class="flex items-center gap-2 p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+                                <label class="flex items-center gap-2 p-2.5 sm:p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
                                     <input type="radio" name="interest" value="IoT" class="accent-indigo-500" required>
                                     <span class="text-xs">IoT & Sensors</span>
                                 </label>
-                                <label class="flex items-center gap-2 p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
+                                <label class="flex items-center gap-2 p-2.5 sm:p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
                                     <input type="radio" name="interest" value="Robotics" class="accent-indigo-500">
                                     <span class="text-xs">Robotics</span>
                                 </label>
-                                <label class="flex items-center gap-2 p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
+                                <label class="flex items-center gap-2 p-2.5 sm:p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
                                     <input type="radio" name="interest" value="PCB" class="accent-indigo-500">
                                     <span class="text-xs">PCB Design</span>
                                 </label>
-                                <label class="flex items-center gap-2 p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
+                                <label class="flex items-center gap-2 p-2.5 sm:p-3 border border-slate-700/40 rounded-xl cursor-pointer hover:border-indigo-500 transition">
                                     <input type="radio" name="interest" value="Embedded" class="accent-indigo-500">
                                     <span class="text-xs">Embedded Systems</span>
                                 </label>
                             </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-600/30 transition flex items-center justify-center gap-2 text-sm">
-                            <i class="fas fa-paper-plane text-xs"></i> Submit Membership Application (Auto-Redirect to WhatsApp)
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 sm:py-4 rounded-xl shadow-lg shadow-indigo-600/30 transition flex items-center justify-center gap-2 text-xs sm:text-sm">
+                            <i class="fas fa-paper-plane text-xs"></i> Submit Membership Application
                         </button>
                     </form>
                 </div>
@@ -624,74 +645,74 @@
     <!-- =========================================================================
          GLOBAL COMMUNITY & LOCATION SECTION
          ========================================================================= -->
-    <section class="py-16 border-t border-slate-700/40">
+    <section class="py-12 sm:py-16 border-t border-slate-700/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
             <span class="text-indigo-500 font-extrabold text-xs uppercase tracking-widest block mb-2">Stay Connected</span>
-            <h2 class="text-3xl font-black mb-4">Join The IAC Community</h2>
-            <p class="text-slate-400 text-sm max-w-xl mx-auto mb-10">
+            <h2 class="text-2xl sm:text-3xl font-black mb-4">Join The IAC Community</h2>
+            <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-8 sm:mb-10">
                 Get real-time updates on upcoming hardware bootcamps, project collaborations, and departmental announcements.
             </p>
 
             <!-- Social Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 sm:mb-12">
                 <a href="https://whatsapp.com/channel/0029Vb8HuoT545upvtF8JE3w" target="_blank" 
-                    class="cyber-card p-5 rounded-2xl flex items-center gap-4 text-left group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-2xl shrink-0">
+                    class="cyber-card p-4 sm:p-5 rounded-2xl flex items-center gap-4 text-left group">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl sm:text-2xl shrink-0">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm group-hover:text-emerald-500 transition">WhatsApp Channel</h4>
-                        <span class="text-xs text-emerald-500 font-semibold">Join for Updates →</span>
+                        <h4 class="font-bold text-xs sm:text-sm group-hover:text-emerald-500 transition">WhatsApp Channel</h4>
+                        <span class="text-[11px] text-emerald-500 font-semibold">Join for Updates →</span>
                     </div>
                 </a>
 
                 <a href="https://www.instagram.com/iac_innovators_hub?igsh=MTg0bjJlOHU3bmh0Yg==" target="_blank" 
-                    class="cyber-card p-5 rounded-2xl flex items-center gap-4 text-left group">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-2xl shrink-0">
+                    class="cyber-card p-4 sm:p-5 rounded-2xl flex items-center gap-4 text-left group">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-xl sm:text-2xl shrink-0">
                         <i class="fab fa-instagram"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm group-hover:text-rose-500 transition">Instagram Hub</h4>
-                        <span class="text-xs text-rose-500 font-semibold">Follow Reels & Posts →</span>
+                        <h4 class="font-bold text-xs sm:text-sm group-hover:text-rose-500 transition">Instagram Hub</h4>
+                        <span class="text-[11px] text-rose-500 font-semibold">Follow Reels & Posts →</span>
                     </div>
                 </a>
 
                 <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" 
-                    class="cyber-card p-5 rounded-2xl flex items-center gap-4 text-left group">
-                    <div class="w-12 h-12 rounded-xl bg-red-600 text-white flex items-center justify-center text-2xl shrink-0">
+                    class="cyber-card p-4 sm:p-5 rounded-2xl flex items-center gap-4 text-left group">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-red-600 text-white flex items-center justify-center text-xl sm:text-2xl shrink-0">
                         <i class="fab fa-youtube"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm group-hover:text-red-500 transition">YouTube Channel</h4>
-                        <span class="text-xs text-red-500 font-semibold">Watch Demos →</span>
+                        <h4 class="font-bold text-xs sm:text-sm group-hover:text-red-500 transition">YouTube Channel</h4>
+                        <span class="text-[11px] text-red-500 font-semibold">Watch Demos →</span>
                     </div>
                 </a>
 
                 <a href="https://linkedin.com/in/" target="_blank" 
-                    class="cyber-card p-5 rounded-2xl flex items-center gap-4 text-left group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-2xl shrink-0">
+                    class="cyber-card p-4 sm:p-5 rounded-2xl flex items-center gap-4 text-left group">
+                    <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xl sm:text-2xl shrink-0">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-sm group-hover:text-blue-500 transition">LinkedIn Network</h4>
-                        <span class="text-xs text-blue-500 font-semibold">Connect Professionally →</span>
+                        <h4 class="font-bold text-xs sm:text-sm group-hover:text-blue-500 transition">LinkedIn Network</h4>
+                        <span class="text-[11px] text-blue-500 font-semibold">Connect Professionally →</span>
                     </div>
                 </a>
             </div>
 
             <!-- Address & Map Box -->
-            <div class="cyber-card rounded-3xl p-6 sm:p-8 border border-slate-700/40 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-left">
+            <div class="cyber-card rounded-3xl p-5 sm:p-8 border border-slate-700/40 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center text-left">
                 <div>
                     <span class="text-indigo-500 font-bold text-xs uppercase tracking-wider block mb-1">Location Details</span>
-                    <h3 class="text-xl font-bold mb-4">Department & Club Address</h3>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">Department & Club Address</h3>
 
-                    <div class="space-y-4 text-xs text-slate-300">
+                    <div class="space-y-3.5 text-xs text-slate-300">
                         <div class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt text-indigo-500 text-base mt-0.5"></i>
                             <div>
-                                <strong class="block text-sm">Institute of Engineering & Technology (IET) Building</strong>
-                                <span class="text-slate-400">First Floor, Electronics & Instrumentation Department, Bundelkhand University, Jhansi, Uttar Pradesh - 284128</span>
+                                <strong class="block text-xs sm:text-sm">Institute of Engineering & Technology (IET) Building</strong>
+                                <span class="text-slate-400 text-[11px]">First Floor, Electronics & Instrumentation Department, Bundelkhand University, Jhansi, Uttar Pradesh - 284128</span>
                             </div>
                         </div>
 
@@ -713,7 +734,7 @@
                     </div>
                 </div>
 
-                <div class="h-56 rounded-2xl overflow-hidden border border-slate-700/40">
+                <div class="h-48 sm:h-56 rounded-2xl overflow-hidden border border-slate-700/40">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.834789524584!2d78.6012!3d25.4431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39777123456789ab%3A0x123456789abcdef!2sBundelkhand%20University!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
@@ -727,7 +748,7 @@
     <!-- =========================================================================
          GLOBAL FOOTER
          ========================================================================= -->
-    <footer class="py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-700/40">
+    <footer class="py-10 sm:py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-700/40">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-xs">
             <div>
                 <div class="flex items-center gap-2 mb-3">
@@ -761,7 +782,7 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-700/40 text-center text-slate-500 text-[11px]">
+        <div class="max-w-7xl mx-auto pt-6 border-t border-slate-700/40 text-center text-slate-500 text-[10px] sm:text-[11px]">
             © 2026 Innovation & Automation Club (IAC). Built for Department of EIE, Bundelkhand University Jhansi.
         </div>
     </footer>
@@ -773,12 +794,12 @@
     
     <!-- Global Command Search Modal (Ctrl + K) -->
     <div id="command-search-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="cyber-card w-full max-w-lg rounded-3xl p-6 shadow-2xl relative animate-modal-pop">
+        <div class="cyber-card w-full max-w-lg rounded-3xl p-5 sm:p-6 shadow-2xl relative animate-modal-pop">
             <button onclick="IACApp.closeModal('command-search-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold">✕</button>
             <div class="flex items-center gap-3 border-b border-slate-700 pb-3 mb-4">
                 <i class="fas fa-search text-indigo-500"></i>
                 <input type="text" id="command-input" placeholder="Search faculty, projects, domain leads..." oninput="IACApp.handleCommandInput(this.value)"
-                    class="w-full bg-transparent border-none text-sm text-white placeholder-slate-500 focus:outline-none">
+                    class="w-full bg-transparent border-none text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none">
             </div>
             <div id="command-results" class="max-h-64 overflow-y-auto space-y-1">
                 <p class="text-slate-500 text-xs text-center py-4">Type a query above to search...</p>
@@ -788,7 +809,7 @@
 
     <!-- Faculty Profile Modal -->
     <div id="faculty-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="cyber-card w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto animate-modal-pop">
+        <div class="cyber-card w-full max-w-lg rounded-3xl p-5 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto animate-modal-pop">
             <button onclick="IACApp.closeModal('faculty-modal')" class="absolute top-4 right-4 w-8 h-8 rounded-full border border-slate-700/40 hover:bg-slate-700/40 flex items-center justify-center font-bold z-20">✕</button>
             <div id="faculty-modal-content"></div>
         </div>
@@ -796,7 +817,7 @@
 
     <!-- Team Profile Modal -->
     <div id="team-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="cyber-card w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto animate-modal-pop">
+        <div class="cyber-card w-full max-w-lg rounded-3xl p-5 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto animate-modal-pop">
             <button onclick="IACApp.closeModal('team-modal')" class="absolute top-4 right-4 w-8 h-8 rounded-full border border-slate-700/40 hover:bg-slate-700/40 flex items-center justify-center font-bold z-20">✕</button>
             <div id="team-modal-content"></div>
         </div>
@@ -804,7 +825,7 @@
 
     <!-- Project Details Modal -->
     <div id="project-modal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="cyber-card w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto animate-modal-pop">
+        <div class="cyber-card w-full max-w-lg rounded-3xl p-5 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto animate-modal-pop">
             <button onclick="IACApp.closeModal('project-modal')" class="absolute top-4 right-4 w-8 h-8 rounded-full border border-slate-700/40 hover:bg-slate-700/40 flex items-center justify-center font-bold z-20">✕</button>
             <div id="project-modal-content"></div>
         </div>

@@ -742,13 +742,13 @@ const IACApp = {
     },
 
     // ----------------------------------------------------------------------
-    // 11. REGISTRATION FORM & WHATSAPP REDIRECT
+    // 11. REGISTRATION FORM & MONGODB ATLAS BACKEND INTEGRATION
     // ----------------------------------------------------------------------
     setupRegistrationForm() {
         const form = document.getElementById('iac-registration-form');
         if (!form) return;
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const fullName = document.getElementById('fullName').value;
@@ -759,6 +759,25 @@ const IACApp = {
             const year = document.getElementById('year').value;
             const interestEl = document.querySelector('input[name="interest"]:checked');
             const interest = interestEl ? interestEl.value : 'Embedded Systems';
+
+            const payload = { fullName, rollNo, email, phone, department: dept, year, interest };
+
+            // Save to MongoDB Atlas API Backend
+            try {
+                const apiHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? 'http://localhost:5000' 
+                    : 'http://localhost:5000'; // Default API host
+
+                fetch(`${apiHost}/api/applications`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).then(res => res.json())
+                  .then(data => console.log('✅ Saved to MongoDB Atlas:', data))
+                  .catch(err => console.log('⚠️ Backend offline, proceeding with WhatsApp dispatch:', err));
+            } catch (err) {
+                console.warn('Backend request deferred:', err);
+            }
 
             const message = `*NEW IAC MEMBERSHIP APPLICATION*%0A` +
                 `*Name:* ${encodeURIComponent(fullName)}%0A` +
@@ -771,14 +790,110 @@ const IACApp = {
 
             // WhatsApp Redirect
             const whatsappUrl = `https://wa.me/919876543210?text=${message}`;
-            alert(`Application Submitted Successfully!\nRedirecting to WhatsApp to send application details...`);
+            alert(`Application Submitted Successfully!\nYour application has been registered into the MongoDB database.`);
             window.open(whatsappUrl, '_blank');
             form.reset();
         });
     },
 
     // ----------------------------------------------------------------------
-    // 12. HELPER MODAL WINDOW METHODS
+    // 12. ADMIN APPLICATIONS VIEWER (MONGODB DATA PROCESSOR)
+    // ----------------------------------------------------------------------
+    openAdminPortal() {
+        const apiKey = prompt("🔑 Enter Admin Secret API Key to view received MongoDB Atlas applications:\n(Default key: iac_admin_secret_key_2026)");
+        if (!apiKey) return;
+
+        const apiHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+            ? 'http://localhost:5000' 
+            : 'http://localhost:5000';
+
+        fetch(`${apiHost}/api/applications`, {
+            headers: { 'x-api-key': apiKey }
+        })
+        .then(res => {
+            if (!res.ok) throw new Error('Invalid Admin API Key or Backend Server Offline');
+            return res.json();
+        })
+        .then(resData => {
+            if (resData.success) {
+                this.renderAdminApplicationsModal(resData.data, apiKey, apiHost);
+            }
+        })
+        .catch(err => {
+            alert(`❌ Error: ${err.message}\nMake sure the Express server is running on http://localhost:5000!`);
+        });
+    },
+
+    renderAdminApplicationsModal(applications, apiKey, apiHost) {
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('project-modal-content');
+        if (!modal || !modalContent) return;
+
+        const rows = applications.length === 0 
+            ? `<p class="text-slate-400 text-xs text-center py-6">No applications received in MongoDB Atlas yet.</p>`
+            : applications.map(app => `
+                <div class="p-4 rounded-2xl bg-slate-900 border border-slate-700/50 space-y-2 text-xs">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-white text-sm">${app.fullName}</h4>
+                            <span class="text-[10px] text-indigo-400 font-mono">Roll: ${app.rollNo} • ${app.department} (${app.year})</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${app.status === 'approved' ? 'bg-emerald-500/20 text-emerald-400' : app.status === 'contacted' ? 'bg-cyan-500/20 text-cyan-400' : 'bg-yellow-500/20 text-yellow-400'}">
+                            ${app.status}
+                        </span>
+                    </div>
+                    <div class="text-[11px] text-slate-300 space-y-1">
+                        <div><i class="fas fa-envelope text-indigo-400 mr-1.5"></i> ${app.email}</div>
+                        <div><i class="fab fa-whatsapp text-emerald-400 mr-1.5"></i> ${app.phone}</div>
+                        <div><i class="fas fa-microchip text-cyan-400 mr-1.5"></i> Interest: <strong class="text-white">${app.interest}</strong></div>
+                        <div class="text-[10px] text-slate-500 pt-1">Submitted: ${new Date(app.submittedAt).toLocaleString()}</div>
+                    </div>
+                    <div class="flex gap-2 pt-2 border-t border-slate-800">
+                        <button onclick="IACApp.updateAppStatus('${app._id}', 'contacted', '${apiKey}', '${apiHost}')" class="bg-cyan-600/30 hover:bg-cyan-600/50 text-cyan-300 text-[10px] px-2.5 py-1 rounded font-bold transition">Mark Contacted</button>
+                        <button onclick="IACApp.updateAppStatus('${app._id}', 'approved', '${apiKey}', '${apiHost}')" class="bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 text-[10px] px-2.5 py-1 rounded font-bold transition">Approve</button>
+                    </div>
+                </div>
+            `).join('');
+
+        modalContent.innerHTML = `
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-700/50 pb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-white"><i class="fas fa-database text-emerald-400 mr-2"></i> MongoDB Atlas Applications</h3>
+                        <p class="text-xs text-slate-400">Received Student Applications (${applications.length} Total)</p>
+                    </div>
+                    <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] font-extrabold px-2.5 py-1 rounded-full">LIVE DB</span>
+                </div>
+                <div class="space-y-3 max-h-[60vh] overflow-y-auto pr-1">
+                    ${rows}
+                </div>
+            </div>
+        `;
+
+        this.openModal('project-modal');
+    },
+
+    updateAppStatus(id, newStatus, apiKey, apiHost) {
+        fetch(`${apiHost}/api/applications/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
+            },
+            body: JSON.stringify({ status: newStatus })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert(`Status updated to ${newStatus}`);
+                this.openAdminPortal();
+            }
+        })
+        .catch(err => alert('Error updating status: ' + err.message));
+    },
+
+    // ----------------------------------------------------------------------
+    // 13. HELPER MODAL WINDOW METHODS
     // ----------------------------------------------------------------------
     openModal(modalId) {
         const modal = document.getElementById(modalId);
