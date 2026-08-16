@@ -868,29 +868,71 @@ const IACApp = {
     },
 
     // ----------------------------------------------------------------------
-    // 12. ADMIN APPLICATIONS VIEWER (MONGODB DATA PROCESSOR)
+    // 12. ADMIN APPLICATIONS VIEWER (SECURE AUTHENTICATION)
     // ----------------------------------------------------------------------
     openAdminPortal() {
-        const apiKey = prompt("🔑 Enter Admin Secret API Key to view received MongoDB Atlas applications:\n(Default key: iac_admin_secret_key_2026)");
-        if (!apiKey) return;
+        // Remove old modal if open
+        document.getElementById('admin-login-modal')?.remove();
 
-        const hostname = window.location.hostname || 'localhost';
-        const apiHost = `http://${hostname}:5000`;
+        const loginModal = document.createElement('div');
+        loginModal.id = 'admin-login-modal';
+        loginModal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay';
+        loginModal.innerHTML = `
+            <div class="cyber-card rounded-3xl p-6 sm:p-8 max-w-md w-full relative animate-modal-pop shadow-2xl">
+                <button id="close-admin-login" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg transition">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="w-12 h-12 bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 rounded-2xl flex items-center justify-center mb-4 text-xl shadow-lg shadow-indigo-500/10">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">IAC Core Admin Authentication</h3>
+                <p class="text-xs text-slate-400 mb-5">Restricted area for IAC Core Team & Faculty Leads only.</p>
+                
+                <form id="admin-login-form" class="space-y-4">
+                    <div>
+                        <label for="admin-passkey-input" class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
+                            Secret Admin Passkey <span class="text-indigo-500">*</span>
+                        </label>
+                        <input type="password" id="admin-passkey-input" required placeholder="••••••••••••••••" 
+                            class="w-full bg-slate-900 border border-slate-700/60 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-indigo-500 transition">
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 text-sm shadow-lg shadow-indigo-600/30">
+                        <i class="fas fa-key"></i> Authenticate & Open Dashboard
+                    </button>
+                </form>
+            </div>
+        `;
 
-        fetch(`${apiHost}/api/applications`, {
-            headers: { 'x-api-key': apiKey }
-        })
-        .then(res => {
-            if (!res.ok) throw new Error('Invalid Admin API Key or Backend Server Offline');
-            return res.json();
-        })
-        .then(resData => {
-            if (resData.success) {
-                this.renderAdminApplicationsModal(resData.data, apiKey, apiHost);
-            }
-        })
-        .catch(err => {
-            alert(`❌ Error: ${err.message}\nMake sure the Express server is running on http://localhost:5000!`);
+        document.body.appendChild(loginModal);
+
+        document.getElementById('close-admin-login')?.addEventListener('click', () => loginModal.remove());
+
+        document.getElementById('admin-login-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const apiKey = document.getElementById('admin-passkey-input')?.value;
+            if (!apiKey) return;
+
+            const hostname = window.location.hostname || 'localhost';
+            const apiHost = `http://${hostname}:5000`;
+
+            fetch(`${apiHost}/api/applications`, {
+                headers: { 'x-api-key': apiKey }
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Invalid Admin API Key or Backend Server Offline');
+                return res.json();
+            })
+            .then(data => {
+                loginModal.remove();
+                if (data.success) {
+                    this.renderAdminApplicationsModal(data.data, apiKey, apiHost);
+                } else {
+                    alert('❌ Authentication Failed: ' + data.error);
+                }
+            })
+            .catch(err => {
+                alert('🔒 Security Access Denied!\n\nIncorrect Secret Admin Passkey or Backend Server Offline.');
+            });
         });
     },
 
